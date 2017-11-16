@@ -43,8 +43,8 @@
 	   	<div class="row">    		            
 
 			   	<ul id="nav" class="nav">
-			      	<li class="current"><a href="index.html">Home</a></li>
-					<li class=""><a href="create.html">Create Blog</a></li>
+			      	<li class=""><a href="index.html">Home</a></li>
+					<li class="current"><a href="index.html">Create Blog</a></li>
 
 			   	</ul>		   	 
 
@@ -57,32 +57,35 @@
 
    	<div class="row">
 
-   		<div id="main" class="eight columns">
+   		 <div class="respond">
+                  <form name="contactForm" id="contactForm" method="post" action="">
+  					   <fieldset>
 
-	   		<article ng-show="post.title" ng-repeat="post in posts" class="entry">
+                     <div class="group">
+  						      <label for="txtTitle">Title <span class="required">*</span></label>
+  						      <input name="txtTitle" type="text"  ng-model="title" value="" required />
+							  
+							  
+                     </div>
 
-					<header class="entry-header">
+                    
 
-						<h2 class="entry-title">
-							<a href="single.html?id={{post.id}}" title="">{{post.title}}</a>
-						</h2> 				 
-					
-						<div class="entry-meta">
-							<ul>
-								<li>{{post.date}}</li>
-								<span class="meta-sep">&bull;</span>	
-								<li>{{post.author}}</li>
-							</ul>
-						</div> 
+                     <div class="group">
+  						      <label for="txtAuthor">Author</label>
+  						      <input name="txtAuthor" type="text" ng-model="author" value="" required  />
+							  
+							  
+                     </div>
+
+                     
+                     <button type="button" class="submit" ng-click=submit()>Submit</button>
+
 					 
-					</header> 
-					
+					 <span>{{Message}}</span>
+  					   </fieldset>
+  				      </form> 
 
-				</article> 
-
-	   			
-   		</div> 
-
+               </div>
                   
             </div>
    			
@@ -97,7 +100,7 @@
    
 </div>
 
-<script src="app/controllers/appController.js"></script>
+<script src="app/controllers/createController.js"></script>
 
 </body>
 </html>

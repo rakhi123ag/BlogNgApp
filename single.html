@@ -19,8 +19,8 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<body ng-app="myApp" ng-controller="appCtrl">
-
+<body ng-app="myApp" ng-controller="singleCtrl">
+<base href="">
 
    <header id="top">
 
@@ -29,7 +29,7 @@
    		<div class="header-content twelve columns">
 
 		      <h1 id="logo-text"><a href="index.html" title="">Cash Positive</a></h1>
-				<p id="intro">Frontend Assignment</p>
+				<p id="intro">Put your awesome slogan here...</p>
 
 			</div>			
 
@@ -45,7 +45,6 @@
 			   	<ul id="nav" class="nav">
 			      	<li class="current"><a href="index.html">Home</a></li>
 					<li class=""><a href="create.html">Create Blog</a></li>
-
 			   	</ul>		   	 
 
 	   	</div> 
@@ -57,39 +56,61 @@
 
    	<div class="row">
 
-   		<div id="main" class="eight columns">
+<div id="main" class="eight columns">
 
-	   		<article ng-show="post.title" ng-repeat="post in posts" class="entry">
+   			<article class="entry">
 
 					<header class="entry-header">
 
 						<h2 class="entry-title">
-							<a href="single.html?id={{post.id}}" title="">{{post.title}}</a>
+                          {{post.title}}
 						</h2> 				 
-					
+				
 						<div class="entry-meta">
 							<ul>
 								<li>{{post.date}}</li>
-								<span class="meta-sep">&bull;</span>	
+								<span class="meta-sep">&bull;</span>							
+								
 								<li>{{post.author}}</li>
 							</ul>
 						</div> 
-					 
+				 
 					</header> 
-					
+				
+				
 
-				</article> 
+				</article>
 
-	   			
-   		</div> 
+            <div id="comments">
 
-                  
-            </div>
-   			
-   		</div> 
+               <h3>{{comments.length}} Comments</h3>
 
-   	</div> 
-   </div> 
+               <!-- commentlist -->
+               <ol class="commentlist">
+
+                  <li   ng-repeat="comment in comments" class="depth-1">
+
+                     <div class="avatar">
+                        <img width="50" height="50" class="avatar" src="images/user-01.png" alt="">
+                     </div>
+
+                     <div class="comment-content">
+
+	                     <div class="comment-text">
+	                        <p>{{comment.body}}</p>
+	                     </div>
+
+	                  </div>
+
+                  </li>
+
+                 </ol>
+
+               </div> <!-- Respond End -->
+
+            </div>  
+
+
   
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
@@ -97,7 +118,7 @@
    
 </div>
 
-<script src="app/controllers/appController.js"></script>
+<script src="app/controllers/singleController.js"></script>
 
 </body>
 </html>

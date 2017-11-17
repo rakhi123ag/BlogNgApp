@@ -106,6 +106,20 @@
 
                  </ol>
 
+				  <form name="contactForm" id="contactForm" method="post" action="">
+  					   <fieldset>
+
+                     <div class="group">
+  						      <label for="txtComment">Add Comment <span class="required">*</span></label>
+  						      <input name="txtComment" type="text"  ng-model="comment" value="" required />
+							  
+							  
+                     </div>
+
+                     
+                     <button type="button" class="submit" ng-click=createComment()>Submit</button>
+					  <span>{{Message}}</span>
+				 
                </div> <!-- Respond End -->
 
             </div>  

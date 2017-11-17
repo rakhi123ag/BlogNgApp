@@ -1,6 +1,6 @@
 var app=angular.module('myApp', []);
 
-app.controller('appCtrl', function($scope,$http) 
+app.controller('createCtrl', function($scope,$http) 
 {
 	
 	$scope.Message="";
@@ -9,23 +9,21 @@ app.controller('appCtrl', function($scope,$http)
 		console.log($scope.title);
 	    console.log($scope.author);
 		
-		var post={title:$scope.title,date:formatDate(new Date()),author: $scope.author};
+		var data={title:$scope.title,date:formatDate(new Date()),author: $scope.author};
 		
-		$http.post("http://assignment-server.herokuapp.com/posts",post,
-		{
-        headers: { 'Content-Type': 'application/json'}
-		}).then(function (response)
+		$http.post("http://assignment-server.herokuapp.com/posts",data,{headers: { 'Content-Type': 'application/json'}}).then(function (response)
 	   {
 		console.log("response ",response.data);
+		
 		$scope.Message="Post Created Successfully";
+		$scope.title="";
+		$scope.author="";
 		
       });
 		
 	}
 	
-	
-	
-	
+
 	function formatDate(date) {
          var monthNames = [
     "January", "February", "March",
@@ -41,5 +39,4 @@ app.controller('appCtrl', function($scope,$http)
   return  monthNames[monthIndex] +' ' + day + ',' + year;
 }
 
-console.log(formatDate(new Date())); 
 });

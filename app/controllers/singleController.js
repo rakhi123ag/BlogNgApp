@@ -10,7 +10,28 @@ app.controller('singleCtrl', function($scope,$http)
         $scope.post = response.data;
 		
 		console.log("response",response.data);
+		getComments();
 		
+		
+    });
+	
+	
+	 $scope.createComment=function(){
+		 
+		 var data={postId:parseInt(blogId),body:$scope.comment};
+		
+		$http.post("http://assignment-server.herokuapp.com/comments",data,{headers: { 'Content-Type': 'application/json'}}).then(function (response)
+	   {		
+		getComments();
+      });
+		
+		$scope.Message="Comment posted Successfully";
+		$scope.comment=""; 
+	 }
+	
+	
+	function getComments()
+	{
 		$http.get("http://assignment-server.herokuapp.com/comments").then(function (responseComments)
       	{
 		   
@@ -26,9 +47,7 @@ app.controller('singleCtrl', function($scope,$http)
 		   }
 		  
 		});
-		
-    });
-	
+	}
 	
 	function getParameterByName(name, url) {
     if (!url) url = window.location.href;

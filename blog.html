@@ -1,0 +1,25 @@
+   		<div id="main" class="eight columns" ng-controller="appCtrl">
+
+	   		<article ng-show="post.title" ng-repeat="post in posts" class="entry">
+
+					<header class="entry-header">
+
+						<h2 class="entry-title">
+							<a href="#!single" title="">{{post.title}}</a>
+						</h2> 				 
+					
+						<div class="entry-meta">
+							<ul>
+								<li>{{post.date}}</li>
+								<span class="meta-sep">&bull;</span>	
+								<li>{{post.author}}</li>
+							</ul>
+						</div> 
+					 
+					</header> 
+					
+
+				</article> 
+
+	   			
+   		</div> 

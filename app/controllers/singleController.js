@@ -1,4 +1,4 @@
-var app= angular.module('myApp', []);
+
 
 app.controller('singleCtrl', function($scope,$http) 
 {

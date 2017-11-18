@@ -1,62 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-   <meta charset="utf-8">
-	<title>Blog</title>
-	<meta name="description" content="">  
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-   <link rel="stylesheet" href="assets/css/default.css">
-	<link rel="stylesheet" href="assets/css/layout.css">  
-	<link rel="stylesheet" href="assets/css/media-queries.css"> 
-
-	<script src="assets/js/modernizr.js"></script>
-
-	<link rel="shortcut icon" href="favicon.png" >
-</head>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<body ng-app="myApp" ng-controller="singleCtrl">
-<base href="">
 
-   <header id="top">
-
-   	<div class="row">
-
-   		<div class="header-content twelve columns">
-
-		      <h1 id="logo-text"><a href="index.html" title="">Cash Positive</a></h1>
-				<p id="intro">Put your awesome slogan here...</p>
-
-			</div>			
-
-	   </div>
-
-	   <nav id="nav-wrap"> 
-
-	   	<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
-		   <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
-
-	   	<div class="row">    		            
-
-			   	<ul id="nav" class="nav">
-			      	<li class="current"><a href="index.html">Home</a></li>
-					<li class=""><a href="create.html">Create Blog</a></li>
-			   	</ul>		   	 
-
-	   	</div> 
-
-	   </nav>
-
-   </header> 
-   <div id="content-wrap">
-
-   	<div class="row">
-
-<div id="main" class="eight columns">
+<div id="main" class="eight columns" ng-controller="singleCtrl">
 
    			<article class="entry">
 
@@ -120,19 +65,6 @@
                      <button type="button" class="submit" ng-click=createComment()>Submit</button>
 					  <span>{{Message}}</span>
 				 
-               </div> <!-- Respond End -->
-
-            </div>  
-
-
-  
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>  
-   
-</div>
-
-<script src="app/controllers/singleController.js"></script>
-
-</body>
-</html>
+				 </form>
+            </div>
+</div>  

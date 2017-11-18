@@ -3,7 +3,7 @@ var app=angular.module('myApp', ["ngRoute"]);
 app.config(function ($routeProvider) {
              
             $routeProvider.when('/index', {
-                templateUrl: '/index.html',
+                templateUrl: '/blog.html',
                 controller: 'appCtrl'
             }).when('/single', {
                 templateUrl: 'single.html',

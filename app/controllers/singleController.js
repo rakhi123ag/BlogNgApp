@@ -1,8 +1,8 @@
 
 
-app.controller('singleCtrl', function($scope,$http) 
+app.controller('singleCtrl', function($scope,$http,$routeParams) 
 {
-	var blogId=getParameterByName("id");
+	var blogId=$routeParams.id;
 	
 	
 	$http.get("https://assignment-server.herokuapp.com/posts/"+parseInt(blogId)).then(function (response)

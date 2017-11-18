@@ -5,7 +5,7 @@ app.controller('singleCtrl', function($scope,$http)
 	var blogId=getParameterByName("id");
 	
 	
-	$http.get("http://assignment-server.herokuapp.com/posts/"+parseInt(blogId)).then(function (response)
+	$http.get("https://assignment-server.herokuapp.com/posts/"+parseInt(blogId)).then(function (response)
 	{
         $scope.post = response.data;
 		
@@ -20,7 +20,7 @@ app.controller('singleCtrl', function($scope,$http)
 		 
 		 var data={postId:parseInt(blogId),body:$scope.comment};
 		
-		$http.post("http://assignment-server.herokuapp.com/comments",data,{headers: { 'Content-Type': 'application/json'}}).then(function (response)
+		$http.post("https://assignment-server.herokuapp.com/comments",data,{headers: { 'Content-Type': 'application/json'}}).then(function (response)
 	   {		
 		getComments();
       });
@@ -32,7 +32,7 @@ app.controller('singleCtrl', function($scope,$http)
 	
 	function getComments()
 	{
-		$http.get("http://assignment-server.herokuapp.com/comments").then(function (responseComments)
+		$http.get("https://assignment-server.herokuapp.com/comments").then(function (responseComments)
       	{
 		   
 		   console.log("responseresponseComments",responseComments.data);

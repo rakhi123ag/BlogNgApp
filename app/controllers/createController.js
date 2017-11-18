@@ -11,7 +11,7 @@ app.controller('createCtrl', function($scope,$http)
 		
 		var data={title:$scope.title,date:formatDate(new Date()),author: $scope.author};
 		
-		$http.post("http://assignment-server.herokuapp.com/posts",data,{headers: { 'Content-Type': 'application/json'}}).then(function (response)
+		$http.post("https://assignment-server.herokuapp.com/posts",data,{headers: { 'Content-Type': 'application/json'}}).then(function (response)
 	   {
 		console.log("response ",response.data);
 		
